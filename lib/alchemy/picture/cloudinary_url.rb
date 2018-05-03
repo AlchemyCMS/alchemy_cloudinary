@@ -26,9 +26,10 @@ module Alchemy
     end
 
     def resize_transformation
+      crop_mode = @options[:crop] ? 'fill' : @options[:upsample] ? 'fit' : 'limit'
       if @options[:size]
         {
-          crop: 'fit',
+          crop: crop_mode,
           size: @options[:size]
         }
       end
