@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'alchemy_cms', '~> 4.1.0.beta'
+  s.add_dependency 'alchemy_cms', ['>= 4.1.0.beta', '< 5']
   s.add_dependency 'cloudinary', '~> 1.9'
 end
