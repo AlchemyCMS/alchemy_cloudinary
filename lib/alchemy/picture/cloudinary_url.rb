@@ -4,7 +4,7 @@ module Alchemy
   module Picture::CloudinaryUrl
     def url(options = {})
       @options = options
-      image_file.remote_url(transformation: transformations)
+      image_file.remote_url(transformation: transformations, secure: !!options[:secure])
     end
 
     private
