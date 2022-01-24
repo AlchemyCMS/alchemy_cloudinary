@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Declare your gem's dependencies in alchemy_cloudinary.gemspec.
@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms'
+gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: "4.6-stable"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
