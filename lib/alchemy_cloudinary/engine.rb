@@ -12,8 +12,7 @@ module AlchemyCloudinary
     end
 
     config.to_prepare do
-      file = 'alchemy/picture/cloudinary_url'
-      Rails.configuration.cache_classes ? require(file) : load(file)
+      require_dependency 'alchemy/picture/cloudinary_url'
       Alchemy::Picture.prepend(Alchemy::Picture::CloudinaryUrl)
     end
   end
