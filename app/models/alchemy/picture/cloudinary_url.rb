@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_dependency "alchemy/picture"
+
 module Alchemy
   class Picture < BaseRecord
     class CloudinaryUrl < Url
