@@ -3,8 +3,8 @@
 module AlchemyCloudinary
   class Engine < ::Rails::Engine
     config.before_initialize do
-      require 'dragonfly'
-      require 'alchemy_cloudinary/dragonfly_data_store'
+      require "dragonfly"
+      require "alchemy_cloudinary/dragonfly_data_store"
 
       Dragonfly::App.register_datastore(:alchemy_cloudinary) do
         AlchemyCloudinary::DragonflyDataStore
@@ -12,8 +12,8 @@ module AlchemyCloudinary
     end
 
     config.to_prepare do
-      require_dependency 'alchemy/picture/cloudinary_url'
-      Alchemy::Picture.prepend(Alchemy::Picture::CloudinaryUrl)
+      ::Alchemy::Picture.url_class = ::Alchemy::Picture::CloudinaryUrl
+      ::Alchemy::PictureThumb.generator_class = ::AlchemyCloudinary::CreatePictureThumb
     end
   end
 end

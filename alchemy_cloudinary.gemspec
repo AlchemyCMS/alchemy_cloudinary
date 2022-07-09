@@ -12,11 +12,11 @@ Gem::Specification.new do |s|
   s.email = ["thomas@vondeyen.com"]
   s.homepage = "https://alchemy-cms.com"
   s.summary = "AlchemyCMS Cloudinary Integration."
-  s.description = "AlchemyCMS Cloudinary Integration."
+  s.description = "Render AlchemyCMS images directly from cloudinary."
   s.license = "MIT"
 
   s.files = Dir["lib/**/*", "MIT-LICENSE", "README.md"]
 
-  s.add_dependency "alchemy_cms", [">= 4.1.0.beta", "< 5.1"]
+  s.add_dependency "alchemy_cms", [">= 5.1.0", "< 7.0"]
   s.add_dependency "cloudinary", "~> 1.9"
 end
