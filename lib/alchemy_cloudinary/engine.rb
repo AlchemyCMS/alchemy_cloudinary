@@ -12,8 +12,10 @@ module AlchemyCloudinary
     end
 
     config.to_prepare do
-      ::Alchemy::Picture.url_class = ::Alchemy::Picture::CloudinaryUrl
-      ::Alchemy::PictureThumb.generator_class = ::AlchemyCloudinary::CreatePictureThumb
+      require_dependency "alchemy/picture/cloudinary_url"
+      require_dependency "alchemy_cloudinary/create_picture_thumb"
+      Alchemy::Picture.url_class = Alchemy::Picture::CloudinaryUrl
+      Alchemy::PictureThumb.generator_class = AlchemyCloudinary::CreatePictureThumb
     end
   end
 end
