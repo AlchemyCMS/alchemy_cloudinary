@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.description = "Render AlchemyCMS images directly from cloudinary."
   s.license = "MIT"
 
-  s.files = Dir["lib/**/*", "MIT-LICENSE", "README.md"]
+  s.files = Dir["app/**/*", "lib/**/*", "MIT-LICENSE", "README.md"]
 
   s.add_dependency "alchemy_cms", [">= 5.1.0", "< 7.0"]
   s.add_dependency "cloudinary", "~> 1.9"
