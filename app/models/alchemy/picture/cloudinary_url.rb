@@ -7,9 +7,10 @@ module Alchemy
     class CloudinaryUrl < Url
       def call(params = {})
         @options = variant.instance_variable_get(:@options)
+
         variant.picture.image_file.remote_url(
           transformation: transformations,
-          secure: !!params[:secure],
+          secure: true,
         )
       end
 
