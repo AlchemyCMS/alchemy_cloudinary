@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.1 (2022-07-10)
+## 2.0.2 (2022-07-10)
 
 - Add app folder to gem files
 
