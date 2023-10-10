@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 (2023-10-10)
+
+- Add Alchemy 7.0 support
+
 ## 2.0.2 (2022-07-10)
 
 - Add app folder to gem files
