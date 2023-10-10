@@ -1,7 +1,7 @@
 module AlchemyCloudinary
-  class CreatePictureThumb
+  class StorePictureThumb
     def self.call(*)
-      # make this noop, because we do not want to create thumbnails,
+      # make this noop, because we do not want to store thumbnails,
       # since Cloudinary renders image thumbnails on demand
     end
   end
