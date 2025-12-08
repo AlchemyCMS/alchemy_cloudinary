@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
-require_dependency "alchemy/picture"
-
 module Alchemy
-  class Picture < BaseRecord
-    class CloudinaryUrl < Url
-      def call(params = {})
-        @options = variant.instance_variable_get(:@options)
+  class StorageAdapter
+    class Dragonfly::CloudinaryUrl < Dragonfly::PictureUrl
+      def call(options = {})
+        @options = options
 
-        variant.picture.image_file.remote_url(
+        picture.image_file.remote_url(
           transformation: transformations,
           secure: true,
         )

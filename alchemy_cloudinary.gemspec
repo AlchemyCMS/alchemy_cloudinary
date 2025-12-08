@@ -17,6 +17,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir["app/**/*", "lib/**/*", "MIT-LICENSE", "README.md"]
 
-  s.add_dependency "alchemy_cms", [">= 7.0", "< 8.0"]
-  s.add_dependency "cloudinary", "~> 1.9"
+  s.add_dependency "alchemy_cms", [">= 8.0.0.c", "< 9.0"]
+  s.add_dependency "cloudinary", "~> 2.0"
+
+  s.add_development_dependency "rspec-rails", "~> 6.0"
+  s.add_development_dependency "sqlite3", ">= 2.1"
 end
