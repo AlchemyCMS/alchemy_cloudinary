@@ -36,3 +36,18 @@ jobs:
 
       - name: Release gem to RubyGems
         uses: rubygems/release-gem@v1
+
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(grep VERSION lib/alchemy_cloudinary/version.rb | sed 's/.*"\(.*\)".*/\1/')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
