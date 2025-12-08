@@ -22,5 +22,7 @@ $LOAD_PATH.unshift(File.join(gem_path, "app/models"))
 # Load just the Alchemy picture URL class we need
 require "alchemy/storage_adapter/dragonfly/picture_url"
 
-# Now load our CloudinaryUrl class
+# Load our classes
 require_relative "../app/models/alchemy/storage_adapter/dragonfly/cloudinary_url"
+require_relative "../lib/alchemy_cloudinary/store_picture_thumb"
+require_relative "../lib/alchemy_cloudinary/dragonfly_data_store"
