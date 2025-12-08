@@ -32,6 +32,9 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Update RubyGems for OIDC support
+        run: gem update --system
+
       - name: Extract version from branch name
         id: version
         run: |
