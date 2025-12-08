@@ -1,6 +1,7 @@
 name: Publish Release
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [closed]
     branches:
@@ -8,8 +9,8 @@ on:
 
 jobs:
   publish:
-    # Only run if PR was merged and branch starts with "release/v"
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/v')
+    # Only run if manually triggered OR (PR was merged and branch starts with "release/v")
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/v'))
     runs-on: ubuntu-latest
     permissions:
       id-token: write
